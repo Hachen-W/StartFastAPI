@@ -1,0 +1,19 @@
+import uvicorn
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+def read_root():
+    return {"message": "Привет, Uvicorn!"}
+
+@app.get("/hack")
+def genius():
+    return {"message": "Привет, Uvicorn!"}
+
+@app.get("/whoami")
+def okay():
+    return {"message": "Привет, Uvicorn!"}
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
